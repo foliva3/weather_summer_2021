@@ -8,5 +8,6 @@ hist(datw$Precip, xlab= "Precipitation (mm)",
 #changed format of date using lubridate
 datw$Date <- mdy_hm(datw$Date)
 #make a line plot for air temperature
-plot(datw$Date, datw$AirTemp, type = "l")
-help("asp")     
+ggplot(data = datw, aes(Date, AirTemp, group = 1))+
+  geom_line()
+help("ggplot")
