@@ -15,3 +15,13 @@ tablet <- datw[16450:18127,]
 #make a line plot for air temperature in June
 ggplot(data = tablet, aes(Date, AirTemp, group = 1))+
   geom_line()
+#line plot for precipitation in June
+ggplot(data = tablet, aes(Date, Precip, group = 1))+
+  geom_line()
+#line plot for precipitation in June with date labeled
+#converted date to POSIXct
+Datet <- as.POSIXct(tablet$Date, format = "%m/%d/%Y %H:%M")
+ggplot(data = tablet, aes(Datet, Precip, group = 1))+
+  geom_line()+
+  scale_x_datetime(date_breaks = "1 day", 
+                   date_labels = "%m/%d")
