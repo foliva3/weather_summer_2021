@@ -11,3 +11,7 @@ datw$Date <- mdy_hm(datw$Date)
 ggplot(data = datw, aes(Date, AirTemp, group = 1))+
   geom_line()
 help("ggplot")
+tablet <- datw[16450:18127,]
+#make a line plot for air temperature in June
+ggplot(data = tablet, aes(Date, AirTemp, group = 1))+
+  geom_line()
