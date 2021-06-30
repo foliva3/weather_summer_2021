@@ -10,7 +10,7 @@ datw$Date <- mdy_hm(datw$Date)
 #make a line plot for air temperature
 ggplot(data = datw, aes(Date, AirTemp, group = 1))+
   geom_line()
-help("ggplot")
+#find row names of the date values you want to look at
 tablet <- datw[16450:18127,]
 #make a line plot for air temperature in June
 ggplot(data = tablet, aes(Date, AirTemp, group = 1))+
@@ -25,3 +25,9 @@ ggplot(data = tablet, aes(Datet, Precip, group = 1))+
   geom_line()+
   scale_x_datetime(date_breaks = "1 day", 
                    date_labels = "%m/%d")
+#plot with columns for precipitation in June
+ggplot(data = tablet, aes(Datet, Precip, group= 1))+
+  geom_col()+
+  scale_x_datetime(date_breaks = "1 day", 
+                   date_labels = "%m/%d")
+
